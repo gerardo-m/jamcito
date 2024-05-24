@@ -52,7 +52,6 @@ async def on_message(message):
     return
   if mandaron_a_la_mierda(message_content):
     await jamcito_te_manda_a_la_mierda(message)
-  #await message.channel.send('Hello!')
 
 @client.event
 async def on_voice_state_update(member, before, after):
@@ -120,6 +119,9 @@ def mandaron_a_la_mierda(message_content):
 
 async def jamcito_responds(message):
   c = process_message_content(message.content)
+  if "JAMCITO?" in c:
+    await message.channel.send("Volví perras :sunglasses:")
+    return
   if is_greetings(c):
     await message.channel.send("Hola {0}!".format(message.author.display_name))
     return
@@ -188,8 +190,6 @@ async def invoke_taro(channel):
     return 
   if taro_invokation_progress == 3:
     user = discord.utils.get(channel.guild.members, name="notechies")
-    #user = discord.utils.get(channel.guild.members, name="ger4rdo.92")
-    #user_id = "356161852511748096"
     allowed = discord.AllowedMentions()
     await channel.send("TARO! {0.mention}".format(user), allowed_mentions=allowed)
     taro_invokation_progress = 0
