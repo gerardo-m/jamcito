@@ -7,9 +7,9 @@ readme = "README.md"
 include = ["config.ini"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 discord = "^2.3.2"
-numpy = "^1.24.4"
+numpy = "^1.26.4"
 
 
 [build-system]

@@ -34,7 +34,7 @@ We should have something like
 /home/gerardo/.cache/pypoetry/virtualenvs/jamcito-tXdIXVmH-py3.8/bin/service-run
 ```
 
-Now create the service file to `/etc/system/jamcito.service` with the following content:
+Now create the service file to `/etc/systemd/system/jamcito.service` with the following content:
 
 ```ini
 [Unit]
