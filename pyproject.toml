@@ -1,10 +1,10 @@
 [tool.poetry]
-package-mode = false
 name = "jamcito"
 version = "0.1.0"
 description = ""
 authors = ["Gerardo Miranda <https://gerardomiranda.dev>"]
 readme = "README.md"
+include = ["config.ini"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -15,3 +15,6 @@ numpy = "^1.24.4"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+service-run = "main:main"

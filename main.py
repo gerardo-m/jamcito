@@ -1,10 +1,15 @@
 import discord
 from numpy import random
 import configparser
+import pkgutil
+
+config_data = pkgutil.get_data("jamcito", "config.ini").decode("utf-8")
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read_string(config_data)
 d_config = config['DEFAULT']
+
+print(d_config)
 
 JAM_SERVER = int(d_config['jam server']) 
 TEST_SERVER = int(d_config['test server'])  
@@ -203,3 +208,6 @@ def process_message_content(message_content):
   return c
 
 client.run(d_config['token'])
+
+def main():
+  print("running")
