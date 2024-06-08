@@ -67,10 +67,10 @@ async def on_voice_state_update(member, before, after):
     await client.get_channel(JAM_GENERAL_CHAT).send(message)
   if just_left_voice_channel(JAM_SERVER, before, after):
     allowed = discord.AllowedMentions()
-    await client.get_channel(JAM_GENERAL_CHAT).send("Adiós perra malagradecida {0.mention}".format(member), allowed_mentions=allowed)
+    await client.get_channel(JAM_GENERAL_CHAT).send("Adiós perra {0.mention}".format(member), allowed_mentions=allowed)
   if just_left_voice_channel(TEST_SERVER, before, after):
     allowed = discord.AllowedMentions()
-    await client.get_channel(TEST_GENERAL_CHAT).send("Adiós perra malagradecida {0.mention}".format(member), allowed_mentions=allowed)
+    await client.get_channel(TEST_GENERAL_CHAT).send("Adiós perra {0.mention}".format(member), allowed_mentions=allowed)
 
 def just_connected_to(server_id, before, after):
   return after.channel != None and after.channel.guild.id == server_id and before.channel == None and after.channel != None
