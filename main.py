@@ -96,11 +96,13 @@ def greeting_on_voice_channel(user):
 
 async def manage_spam(message):
   user = message.author
+  if user.name == 'Dice Roller#6944':
+    return False
   channel_id = message.channel.id
   if channel_id in last_author_in_channel:
     if last_author_in_channel[channel_id] == user.name:
       same_author_message_count[channel_id] += 1
-      if same_author_message_count[channel_id] >= SPAM_COUNT_THRESHOLD:
+      if same_author_message_count[channel_id] > SPAM_COUNT_THRESHOLD:
         allowed = discord.AllowedMentions()
         await message.channel.send("Callate mierda! {0.mention}".format(user), allowed_mentions=allowed)
         return True

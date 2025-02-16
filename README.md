@@ -50,5 +50,5 @@ Using The binary path we got before as `ExectStart`
 
 Now you can start the service
 ```bash
-sudo systemctl start example-service
+sudo systemctl start jamcito 
 ```
