@@ -96,7 +96,7 @@ def greeting_on_voice_channel(user):
 
 async def manage_spam(message):
   user = message.author
-  if user.name == 'Dice Roller#6944':
+  if 'Dice Roller' in user.name:
     return False
   channel_id = message.channel.id
   if channel_id in last_author_in_channel:
